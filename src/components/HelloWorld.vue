@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Básico de Vue.js</h1>
     <p>Aperta o F12 aí mano!</p>
     <button @click="counter++">ADD 1</button>
     <button @click="counter--">REMOVE 1</button>
@@ -47,12 +46,13 @@ export default {
       var vm = this
       console.log(this)
       setTimeout(function () {
-        console.log('Olá Dev eu sou um função do tipo: Watch')
+        console.log('Olá Dev eu sou um função do tipo: Watch', value)
         vm.counter = 0
       }, 2000)
     }
   },
   beforeUpdate: function () {
+    alert('Olá Dev eu sou um função do tipo: beforeUpdate, eu sempre sou acionada antes de algum dado mudar')
     return console.log('Olá Dev eu sou um função do tipo: beforeUpdate')
   }
 }
